@@ -1,29 +1,32 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { store } from "./config/redux/store";
+import { Title } from "./components";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import "./styles/globals.css";
+import { CoreBlockchain } from "@thirdweb-dev/chains";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
-const activeChain = "ethereum";
 
-const container = document.getElementById("root");
-const root = createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const activeChain = CoreBlockchain;
+
 root.render(
-  <React.StrictMode>
-    <ThirdwebProvider
-      activeChain={activeChain}
-      clientId={process.env.REACT_APP_TEMPLATE_CLIENT_ID}
-    >
+  <ThirdwebProvider
+    activeChain={activeChain}
+    clientId={"65a85b91315ca838d7a8472fb0e64f92"}
+  >
+    <Provider store={store}>
+      <Title />
       <App />
-    </ThirdwebProvider>
-  </React.StrictMode>
+    </Provider>
+  </ThirdwebProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

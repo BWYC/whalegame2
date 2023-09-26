@@ -1,0 +1,37 @@
+.App {
+  max-width: 1280px;
+  width: 100%;
+  height: 70vh;
+  margin: auto;
+  border: 0.5rem solid #818181;
+  border-radius: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 134, 134);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 134, 134, 1) 0%,
+    rgb(2, 248, 248) 0%,
+    rgb(4, 116, 160) 100%
+  );
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Media Queries */
+@media (max-width: 1280px) {
+  .App {
+    width: 95%;
+    border: 0.2rem solid #eee;
+  }
+}
+
+@media (max-width: 1024px) {
+  .App {
+    height: 50vh;
+    top: 40%;
+  }
+}
