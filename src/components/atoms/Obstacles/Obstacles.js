@@ -66,8 +66,8 @@ const Obstacles = () => {
         className={isPlay ? "obstacle1 obstacle1-move" : "obstacle1"}
         style={
           isPlay
-            ? { animationDuration: `${6 - speed}s` }
-            : { animationDuration: `6s` }
+            ? { animationDuration: `${5 - speed}s` }
+            : { animationDuration: `5s` }
         }
         ref={obstacle1Ref}
       />
