@@ -1,0 +1,51 @@
+.loading-screen-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #000000;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 10;
+}
+
+.loading-mario {
+  width: 100px;
+  height: auto;
+}
+
+.loading-title {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  background-color: #072e2e;
+  border-radius: 0.2rem;
+  box-shadow: rgba(255, 255, 255, 0.606) 0px 8px 24px;
+  border: solid;
+  border-radius: 8px;
+}
+
+.enter-button {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  background-color: #fb2e00;
+  color: #f4d1bf;
+  border-radius: 0.2rem;
+  border: none;
+  box-shadow: rgba(238, 240, 242, 0.551) 0px 8px 24px;
+  cursor: pointer;
+  border: solid;
+  border-radius: 8px;
+}
+
+.enter-button:hover {
+  filter: saturate(10);
+}
