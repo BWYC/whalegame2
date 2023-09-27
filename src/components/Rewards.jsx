@@ -38,7 +38,7 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", color: "orange", margin: "3%" }}
+      style={{ display: "flex", flexDirection: "column", color: "orange", margin: "1%" }}
     >
       <p>
         Your <b>BALANCE</b>

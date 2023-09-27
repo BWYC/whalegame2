@@ -87,17 +87,6 @@ const Obstacles = () => {
           }
           ref={obstacle2Ref}
         />
-        <img
-          src={obstacle3}
-          alt=""
-          className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
-          style={
-            isPlay
-              ? { animationDuration: `${9 - speed}s` }
-              : { animationDuration: `9s` }
-          }
-          ref={obstacle2Ref}
-        />
       </div>
     </>
   );

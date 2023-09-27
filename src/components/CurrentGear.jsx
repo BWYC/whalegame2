@@ -43,10 +43,6 @@ export default function CurrentGear({
 
   return (
     <>
-     {pickaxe && (
-            // @ts-ignore
-            <ThirdwebNftMedia metadata={pickaxe.metadata} height={70} />
-          )}
     <div style={{ display: "flex", flexDirection: "column" }}>
         
       <h6 style={{marginLeft: "1%", color: "white", fontWeight: "400" }}>Your Character</h6>
