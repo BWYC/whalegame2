@@ -70,8 +70,8 @@ const Obstacles = () => {
           className={isPlay ? "obstacle1 obstacle1-move" : "obstacle1"}
           style={
             isPlay
-              ? { animationDuration: `${4 - speed}s` }
-              : { animationDuration: `4s` }
+              ? { animationDuration: `${3 - speed}s` }
+              : { animationDuration: `3s` }
           }
           ref={obstacle1Ref}
         />
@@ -82,8 +82,8 @@ const Obstacles = () => {
           className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
           style={
             isPlay
-              ? { animationDuration: `${8 - speed}s` }
-              : { animationDuration: `8s` }
+              ? { animationDuration: `${6 - speed}s` }
+              : { animationDuration: `6s` }
           }
           ref={obstacle2Ref}
         />

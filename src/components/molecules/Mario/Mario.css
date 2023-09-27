@@ -9,7 +9,7 @@
 .jump {
   animation-name: jumping;
   animation-timing-function: ease-out;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
 }
 
 @keyframes jumping {
@@ -52,7 +52,7 @@
 
 @media (max-width: 640px) {
   .mario {
-    width: 3rem;
+    width: 5rem;
     left: 20px;
     bottom: 60px;
   }

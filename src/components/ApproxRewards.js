@@ -56,12 +56,12 @@ export default function ApproxRewards({ miningContract }: Props) {
   }, [amount, everyMillisecondAmount]);
 
   return (
-    <p style={{ width: 370, overflow: "hidden", color: "white" }}>
+    <p style={{ width: 370, overflow: "hidden", color: "orange" }}>
       Session Earnings :{" "}
-      <b>
+      <p style={{color: "white"}}>
         {ethers.utils.formatEther((amount * multiplier).toFixed(0)) ||
           "Error..."} WHLS
-      </b>
+      </p>
     </p>
   );
 }

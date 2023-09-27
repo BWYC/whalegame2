@@ -60,7 +60,9 @@ const LoadingScreen = () => {
   }
 
   if (isLoading) {
-    return <div className="loading-screen-container">Loading...</div>;
+    return (
+      <div className="loading-screen-container">LOADING BLOCKCHAIN DATA...</div>
+    );
   }
 
   if (!ownedNfts || isError) {
@@ -84,7 +86,9 @@ const LoadingScreen = () => {
       <>
         <div className="loading-screen-container">
           <img src={MarioCharacter} alt="" className="loading-mario" />
-          {!isReady && <h1 className="loading-title">Loading🌊...</h1>}
+          {!isReady && (
+            <h1 className="loading-title">LOADING THE OCEAN🌊...</h1>
+          )}
           {isReady && (
             <button
               className="enter-button"

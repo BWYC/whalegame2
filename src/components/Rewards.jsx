@@ -38,18 +38,20 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", color: "orange", margin: "1%" }}
+      style={{ display: "flex", flexDirection: "column", color: "orange", margin: "1%", fontSize: "14px", padding: "2%", border: "solid"
+    , borderRadius: "16px", width: "330px", height: "auto", backdropFilter: "blur(10px)"
+     }}
     >
       <p>
-        Your <b>BALANCE</b>
+        Your <p>BALANCE</p>
       </p>
    
       <p>
-        Balance : <b>{currentBalance?.displayValue} WHLS</b>
+    <p style={{color: "white"}}>{currentBalance?.displayValue} WHLS</p>
       </p>
       <p>
         Unclaimed :{" "}
-        <b>{unclaimedAmount && ethers.utils.formatUnits(unclaimedAmount)} WHLS</b>
+        <p style={{color: "white"}}>{unclaimedAmount && ethers.utils.formatUnits(unclaimedAmount)} WHLS</p>
       </p>
 
       <ApproxRewards miningContract={miningContract} />
