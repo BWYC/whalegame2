@@ -1,10 +1,8 @@
 import { ThirdwebNftMedia, useAddress, useNFT } from "@thirdweb-dev/react";
 import { EditionDrop, NFT, SmartContract } from "@thirdweb-dev/sdk";
 import React, { useEffect, useState } from "react";
-import ContractMappingResponse from "../types/ContractMappingResponse";
-import GameplayAnimation from "./GameplayAnimation";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
+import ContractMappingResponse from "./types/ContractMappingResponse.ts";
+
 
 type Props = {
   miningContract: SmartContract<any>;
@@ -25,16 +23,16 @@ export default function CurrentGear({
   const address = useAddress();
 
   const { data: playerNft } = useNFT(characterContract, 0);
-  const [pickaxe, setPickaxe] = useState<NFT>();
+  const [pickaxe, setPickaxe] = useState();
 
   useEffect(() => {
     (async () => {
       if (!address) return;
 
-      const p = (await miningContract.call("playerPickaxe", [
+      const ContractMappingResponse = (await miningContract.call("playerPickaxe", [
         address,
-      ])) as ContractMappingResponse;
-
+      ])) 
+      const p = ContractMappingResponse;
       // Now we have the tokenId of the equipped pickaxe, if there is one, fetch the metadata for it
       if (p.isData) {
         const pickaxeMetadata = await pickaxeContract.get(p.value);
@@ -45,28 +43,22 @@ export default function CurrentGear({
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <h2 className={`${styles.noGapTop} `}>Equipped Items</h2>
+      <h5 style={{marginLeft: "1%", color: "white", fontWeight: "400" }}>Character</h5>
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
       >
         {/* Currently equipped player */}
-        <div style={{ outline: "1px solid grey", borderRadius: 16 }}>
+        <div style={{margin: "1%" }}>
           {playerNft && (
-            <ThirdwebNftMedia metadata={playerNft?.metadata} height={"64"} />
+            <ThirdwebNftMedia metadata={playerNft?.metadata} height={150} width={"auto"}  style={{borderRadius: 16 }} />
           )}
         </div>
         {/* Currently equipped pickaxe */}
         <div
-          style={{ outline: "1px solid grey", borderRadius: 16, marginLeft: 8 }}
+          style={{ borderRadius: 16, marginLeft: 8 }}
         >
           {pickaxe && (
             // @ts-ignore
-            <ThirdwebNftMedia metadata={pickaxe.metadata} height={"64"} />
+            <ThirdwebNftMedia metadata={pickaxe.metadata} height={60} />
           )}
         </div>
       </div>
@@ -79,11 +71,10 @@ export default function CurrentGear({
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: 24,
+          marginTop: 5,
         }}
       >
-        <Image src="/mine.gif" height={64} width={64} alt="character-mining" />
-        <GameplayAnimation pickaxe={pickaxe} />
+
       </div>
     </div>
   );

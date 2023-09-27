@@ -48,26 +48,41 @@ const LoadingScreen = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsReady(true);
-    }, 5000);
+    }, 10000);
   }, []);
 
   if (!address) {
     return (
-      <div style={{ color: "white" }}>
+      <div className="loading-screen-container">
         <ConnectWallet theme="dark" />
       </div>
     );
   }
 
+  if (isLoading) {
+    return <div className="loading-screen-container">Loading...</div>;
+  }
+
   if (!ownedNfts || isError) {
-    return <div>Error</div>;
+    return (
+      <div className="loading-screen-container">
+        YOU DO NOT HAVE A CHARACTER
+      </div>
+    );
   }
 
   if (ownedNfts.length === 0) {
     return (
+      <div className="loading-screen-container">
+        <MintContainer />
+      </div>
+    );
+  }
+
+  if (ownedNfts.length !== 0) {
+    return (
       <>
         <div className="loading-screen-container">
-          <MintContainer />
           <img src={MarioCharacter} alt="" className="loading-mario" />
           {!isReady && <h1 className="loading-title">Loading🌊...</h1>}
           {isReady && (

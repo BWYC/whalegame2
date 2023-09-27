@@ -1,7 +1,10 @@
 import "./Obstacles.css";
 import obstacle1 from "../../../assets/img/gif/goombla.gif";
 import obstacle2 from "../../../assets/img/gif/koopa.gif";
+import obstacle3 from "../../../assets/img/gif/boat.gif";
+import obstacle4 from "../../../assets/img/gif/boat1.gif";
 import { useRef, useEffect } from "react";
+import styles from "../../../styles/Gameplay.module.css";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -59,30 +62,44 @@ const Obstacles = () => {
   }, [speed, dispatch]);
 
   return (
-    <div className="obstacles-container">
-      <img
-        src={obstacle1}
-        alt=""
-        className={isPlay ? "obstacle1 obstacle1-move" : "obstacle1"}
-        style={
-          isPlay
-            ? { animationDuration: `${5 - speed}s` }
-            : { animationDuration: `5s` }
-        }
-        ref={obstacle1Ref}
-      />
-      <img
-        src={obstacle2}
-        alt=""
-        className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
-        style={
-          isPlay
-            ? { animationDuration: `${13 - speed}s` }
-            : { animationDuration: `13s` }
-        }
-        ref={obstacle2Ref}
-      />
-    </div>
+    <>
+      <div className="obstacles-container">
+        <img
+          src={obstacle4}
+          alt=""
+          className={isPlay ? "obstacle1 obstacle1-move" : "obstacle1"}
+          style={
+            isPlay
+              ? { animationDuration: `${4 - speed}s` }
+              : { animationDuration: `4s` }
+          }
+          ref={obstacle1Ref}
+        />
+
+        <img
+          src={obstacle2}
+          alt=""
+          className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
+          style={
+            isPlay
+              ? { animationDuration: `${8 - speed}s` }
+              : { animationDuration: `8s` }
+          }
+          ref={obstacle2Ref}
+        />
+        <img
+          src={obstacle3}
+          alt=""
+          className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
+          style={
+            isPlay
+              ? { animationDuration: `${9 - speed}s` }
+              : { animationDuration: `9s` }
+          }
+          ref={obstacle2Ref}
+        />
+      </div>
+    </>
   );
 };
 export default Obstacles;

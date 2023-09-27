@@ -2,7 +2,7 @@ import { useAddress } from "@thirdweb-dev/react";
 import { SmartContract } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
-import ContractMappingResponse from "../types/ContractMappingResponse";
+import ContractMappingResponse from "./types/ContractMappingResponse.ts";
 
 type Props = {
   miningContract: SmartContract<any>;
@@ -25,18 +25,18 @@ export default function ApproxRewards({ miningContract }: Props) {
     (10_000_000_000_000 / 2.1).toFixed(0)
   );
 
-  const [amount, setAmount] = useState<number>(0);
+  const [amount, setAmount] = useState(0);
 
-  const [multiplier, setMultiplier] = useState<number>(0);
+  const [multiplier, setMultiplier] = useState(0);
 
   useEffect(() => {
     (async () => {
       if (!address) return;
 
-      const p = (await miningContract.call("playerPickaxe", [
+      const ContractMappingResponse = (await miningContract.call("playerPickaxe", [
         address,
-      ])) as ContractMappingResponse;
-
+      ]))
+     const p = ContractMappingResponse;
       if (p.isData) {
         setMultiplier(p.value.toNumber() + 1);
       } else {
@@ -56,11 +56,11 @@ export default function ApproxRewards({ miningContract }: Props) {
   }, [amount, everyMillisecondAmount]);
 
   return (
-    <p style={{ width: 370, overflow: "hidden" }}>
-      Earned this session:{" "}
+    <p style={{ width: 370, overflow: "hidden", color: "white" }}>
+      Session Earnings :{" "}
       <b>
         {ethers.utils.formatEther((amount * multiplier).toFixed(0)) ||
-          "Error..."}
+          "Error..."} WHLS
       </b>
     </p>
   );

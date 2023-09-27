@@ -16,12 +16,14 @@ import {
   Footer,
 } from "../../components";
 
+
 function Home() {
   const isPlay = useSelector((state) => state.engine.play);
   return (
     <>
       <div className="App">
         {!isPlay && <KeyMessage />}
+    
         <Bricks />
         <Mario />
         <Sun />

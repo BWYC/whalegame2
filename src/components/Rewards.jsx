@@ -10,7 +10,7 @@ import {
 import { SmartContract, Token } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
 
-import styles from "../styles/Home.module.css";
+
 import ApproxRewards from "./ApproxRewards";
 import { MINING_CONTRACT_ADDRESS } from "../const/contractAddresses";
 
@@ -38,36 +38,24 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      style={{ display: "flex", flexDirection: "column", color: "orange", margin: "3%" }}
     >
       <p>
-        Your <b>Gold Gems</b>
+        Your <b>BALANCE</b>
       </p>
-
-      {tokenMetadata ? (
-        <ThirdwebNftMedia
-          // @ts-ignore
-          metadata={tokenMetadata}
-          height={"48"}
-        />
-      ) : null}
-      <p className={styles.noGapBottom}>
-        Balance: <b>{currentBalance?.displayValue}</b>
+   
+      <p>
+        Balance : <b>{currentBalance?.displayValue} WHLS</b>
       </p>
       <p>
-        Unclaimed:{" "}
-        <b>{unclaimedAmount && ethers.utils.formatUnits(unclaimedAmount)}</b>
+        Unclaimed :{" "}
+        <b>{unclaimedAmount && ethers.utils.formatUnits(unclaimedAmount)} WHLS</b>
       </p>
 
       <ApproxRewards miningContract={miningContract} />
 
-      <div className={styles.smallMargin}>
-        <Web3Button
-          contractAddress={MINING_CONTRACT_ADDRESS}
-          action={(contract) => contract.call("claim")}
-        >
-          Claim
-        </Web3Button>
+      <div >
+
       </div>
     </div>
   );
