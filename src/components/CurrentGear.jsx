@@ -56,11 +56,8 @@ export default function CurrentGear({
         </div>
         
         {/* Currently equipped pickaxe */}
-
+     
       </div>
-
-      {/* Gameplay Animation */}
-
       <div
         style={{
           display: "flex",

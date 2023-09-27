@@ -7,7 +7,7 @@ import { EditionDrop, NFT } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
 import React from "react";
 import { PICKAXE_EDITION_ADDRESS } from "../const/contractAddresses";
-import styles from "../styles/Home.module.css";
+
 
 type Props = {
   pickaxeContract: EditionDrop;
@@ -21,31 +21,21 @@ export default function ShopItem({ item, pickaxeContract }: Props) {
   );
 
   return (
-    <div className={styles.nftBox} key={item.metadata.id.toString()}>
-      <ThirdwebNftMedia
-        metadata={item.metadata}
-        className={`${styles.nftMedia} ${styles.spacerTop}`}
-        height="64"
-      />
-      <h3>{item.metadata.name}</h3>
-      <p>
-        Price:{" "}
-        <b>
-          {claimCondition && ethers.utils.formatUnits(claimCondition?.price)}{" "}
-          GEM
-        </b>
-      </p>
+    <div style={{display: "flex", flexDirection: "row"}} key={item.metadata.id.toString()}>
 
-      <div className={styles.smallMargin}>
+
+      <div>
         <Web3Button
+         style={{ color: "orange", background: "black", border: "solid" }}
           theme="dark"
           contractAddress={PICKAXE_EDITION_ADDRESS}
           action={(contract) => contract.erc1155.claim(item.metadata.id, 1)}
           onSuccess={() => alert("Purchased!")}
           onError={(error) => alert(error)}
         >
-          Buy
+          ASSISTANT
         </Web3Button>
+
       </div>
     </div>
   );

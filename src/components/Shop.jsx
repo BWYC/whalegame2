@@ -16,7 +16,7 @@ export default function Shop({ pickaxeContract }: Props) {
 
   return (
     <>
-      <div>
+      <div style={{color: "white"}}>
         {availablePickaxes?.map((p) => (
           <ShopItem
             pickaxeContract={pickaxeContract}

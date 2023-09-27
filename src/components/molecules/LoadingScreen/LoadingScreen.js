@@ -54,7 +54,10 @@ const LoadingScreen = () => {
   if (!address) {
     return (
       <div className="loading-screen-container">
-        <ConnectWallet theme="dark" />
+        <ConnectWallet
+          theme="dark"
+          style={{ color: "orange", background: "black", border: "solid" }}
+        />
       </div>
     );
   }

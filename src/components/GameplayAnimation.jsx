@@ -13,8 +13,8 @@ type Props = {
 };
 
 export default function GameplayAnimation({ pickaxe }: Props) {
-  if (pickaxe) {
-    return <div style={{ marginLeft: 8 }}>I need a pickaxe!</div>;
+  if (!pickaxe) {
+    return <div style={{ marginLeft: 8, color: "white" }}>I need a pickaxe!</div>;
   }
 
   return (
