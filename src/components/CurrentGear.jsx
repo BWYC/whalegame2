@@ -42,25 +42,25 @@ export default function CurrentGear({
   }, [address, miningContract, pickaxeContract]);
 
   return (
+    <>
+     {pickaxe && (
+            // @ts-ignore
+            <ThirdwebNftMedia metadata={pickaxe.metadata} height={70} />
+          )}
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <h5 style={{marginLeft: "1%", color: "white", fontWeight: "400" }}>Character</h5>
+        
+      <h6 style={{marginLeft: "1%", color: "white", fontWeight: "400" }}>Your Character</h6>
       <div
       >
         {/* Currently equipped player */}
         <div style={{margin: "1%" }}>
           {playerNft && (
-            <ThirdwebNftMedia metadata={playerNft?.metadata} height={150} width={"auto"}  style={{borderRadius: 16 }} />
+            <ThirdwebNftMedia metadata={playerNft?.metadata} height={120} width={"auto"}  style={{borderRadius: 16, border: "solid", color: "white"}} />
           )}
         </div>
+        
         {/* Currently equipped pickaxe */}
-        <div
-          style={{ borderRadius: 16, marginLeft: 8 }}
-        >
-          {pickaxe && (
-            // @ts-ignore
-            <ThirdwebNftMedia metadata={pickaxe.metadata} height={60} />
-          )}
-        </div>
+
       </div>
 
       {/* Gameplay Animation */}
@@ -77,5 +77,6 @@ export default function CurrentGear({
 
       </div>
     </div>
+    </>
   );
 }
