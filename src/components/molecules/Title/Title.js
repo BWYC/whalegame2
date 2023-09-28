@@ -5,6 +5,7 @@ import {
   useContract,
   useMetamask,
   Web3Button,
+  useOwnedNFTs
 } from "@thirdweb-dev/react";
 import React from "react";
 import CurrentGear from "../../../components/Shop";
@@ -37,17 +38,33 @@ const Title = () => {
     "edition-drop",
   );
   const { contract: tokenContract } = useContract(GOLD_GEMS_ADDRESS, "token");
+  const { data: ownedPickaxes, isLoading } = useOwnedNFTs(
+    pickaxeContract,
+    address
+  );
+
+  async function equip(id: string) {
+    if (!address) return;
+
+    // The contract requires approval to be able to transfer the pickaxe
+    const hasApproval = await pickaxeContract.isApproved(
+      address,
+      MINING_CONTRACT_ADDRESS
+    );
+
+    if (!hasApproval) {
+      await pickaxeContract.setApprovalForAll(MINING_CONTRACT_ADDRESS, true);
+    }
+
+    await miningContract.call("stake", [id]);
+
+    // Refresh the page
+    window.location.reload();
+  }
   return (
     <div className="title-container">
-      <img src={Mario} alt="" className="mario-logo" />
-      <h1 className="title">Whale arcade</h1>
-      <Web3Button
-        style={{ color: "orange", background: "black", border: "solid" }}
-        contractAddress={MINING_CONTRACT_ADDRESS}
-        action={(contract) => contract.call("claim")}
-      >
-        Claim rewards
-      </Web3Button>
+      <img src={"/0.gif"} alt="" className="mario-logo" />
+      <h4 className="title">Whale arcade</h4>
       {pickaxeContract && tokenContract ? (
         <>
           <Shop pickaxeContract={pickaxeContract} />
@@ -55,6 +72,18 @@ const Title = () => {
       ) : (
         <LoadingSection />
       )}
+      {ownedPickaxes?.map((p) => (
+        <div key={p.metadata.id.toString()}>
+            <Web3Button
+              theme="dark"
+              contractAddress={MINING_CONTRACT_ADDRESS}
+              action={() => equip(p.metadata.id)}
+              style={{ color: "orange", background: "black", border: "solid",  fontSize: "10px" }}
+            >
+              Equip assistant
+            </Web3Button>
+         </div>
+      ))}
     </div>
   );
 };

@@ -21,6 +21,7 @@ export default function MintContainer() {
             borderRadius: "16px",
             color: "orange",
             border: "solid",
+            boxShadow: "rgba(108, 140, 242, 0.951) 0px 8px 24px",
           }}
         />
         <Web3Button

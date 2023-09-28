@@ -26,14 +26,14 @@ export default function ShopItem({ item, pickaxeContract }: Props) {
 
       <div>
         <Web3Button
-         style={{ color: "orange", background: "black", border: "solid" }}
+         style={{ color: "orange", background: "black", border: "solid", fontSize: "10px" }}
           theme="dark"
           contractAddress={PICKAXE_EDITION_ADDRESS}
           action={(contract) => contract.erc1155.claim(item.metadata.id, 1)}
           onSuccess={() => alert("Purchased!")}
           onError={(error) => alert(error)}
         >
-          ASSISTANT
+          BUY ASSISTANT
         </Web3Button>
 
       </div>

@@ -14,20 +14,20 @@
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: #00a2ff;
 }
 
 /* Media Queries */
 @media (max-width: 640px) {
   .title-container {
-    gap: 25px;
+    gap: 5px;
   }
   .mario-logo {
-    width: 50px;
+    width: 30px;
     height: auto;
   }
   .title {
-    font-size: 1.5rem;
+    display: none;
   }
 }
