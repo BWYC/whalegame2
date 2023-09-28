@@ -67,8 +67,8 @@ const LoadingScreen = () => {
           }}
         />
         <h3 style={{ width: "50%", fontStyle: "italic", fontWeight: "400" }}>
-          ---Hello, Whale, are you ready to battle the waves, its an EPIC world
-          only whales dare ENTER. Connect YOUR{" "}
+          ---Hello!! Whale, are you ready to battle the waves, AN EPIC world
+          AWAITS! AND only whales dare ENTER. Connect YOUR{" "}
           <b style={{ color: "orange" }}>CORE</b> wallet to proceede---
         </h3>
         <ConnectWallet
