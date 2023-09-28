@@ -81,7 +81,20 @@ const LoadingScreen = () => {
 
   if (isLoading) {
     return (
-      <div className="loading-screen-container">LOADING BLOCKCHAIN DATA...</div>
+      <div className="loading-screen-container">
+        <img
+          src="/0.gif"
+          alt="nft"
+          height={250}
+          style={{
+            margin: "1%",
+            borderRadius: "200px",
+            border: "solid",
+            boxShadow: "rgba(60, 240, 42, 0.951) 0px 8px 24px",
+          }}
+        />
+        LOADING BLOCKCHAIN DATA...
+      </div>
     );
   }
 
