@@ -63,7 +63,15 @@ const Title = () => {
   }
   return (
     <div className="title-container">
-      <img src={"/0.gif"} alt="" className="mario-logo" />
+      <img 
+       style={{
+        margin: "1%",
+        borderRadius: "16px",
+        color: "orange",
+        border: "solid",
+        boxShadow: "rgba(108, 240, 242, 0.451) 0px 8px 24px",
+      }}
+      src={"/0.gif"} alt="" className="mario-logo" />
       <h4 className="title">Whale arcade</h4>
       {pickaxeContract && tokenContract ? (
         <>
