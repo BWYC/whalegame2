@@ -66,7 +66,7 @@ const Title = () => {
       <img 
        style={{
         margin: "1%",
-        borderRadius: "16px",
+        borderRadius: "200px",
         color: "orange",
         border: "solid",
         boxShadow: "rgba(108, 240, 242, 0.451) 0px 8px 24px",
