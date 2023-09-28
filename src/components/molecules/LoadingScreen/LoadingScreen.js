@@ -54,6 +54,23 @@ const LoadingScreen = () => {
   if (!address) {
     return (
       <div className="loading-screen-container">
+        <img
+          src="/whale.png"
+          alt="nft"
+          height={250}
+          style={{
+            margin: "1%",
+            borderRadius: "16px",
+            color: "orange",
+            border: "solid",
+            boxShadow: "rgba(108, 240, 242, 0.951) 0px 8px 24px",
+          }}
+        />
+        <h3 style={{ width: "50%", fontStyle: "italic", fontWeight: "400" }}>
+          ---Hello, Whale, are you ready to battle the waves, its an EPIC world
+          only whales dare ENTER. Connect YOUR{" "}
+          <b style={{ color: "orange" }}>CORE</b> your wallet to start---
+        </h3>
         <ConnectWallet
           theme="dark"
           style={{ color: "orange", background: "black", border: "solid" }}
