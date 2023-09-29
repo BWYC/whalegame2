@@ -18,7 +18,7 @@ import {
 } from "@thirdweb-dev/react";
 import CurrentGear from "../../../components/CurrentGear";
 
-const Score = () => {
+export const Score = () => {
   const address = useAddress();
 
   const { contract: miningContract } = useContract(MINING_CONTRACT_ADDRESS);
@@ -63,7 +63,7 @@ const Score = () => {
             miningContract={miningContract}
             tokenContract={tokenContract}
           />
-                    <CurrentGear
+          <CurrentGear
             miningContract={miningContract}
             characterContract={characterContract}
             pickaxeContract={pickaxeContract}
