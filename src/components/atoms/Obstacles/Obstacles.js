@@ -88,13 +88,24 @@ const Obstacles = () => {
           ref={obstacle2Ref}
         />
         <img
-          src={obstacle2}
+          src={obstacle3}
           alt=""
           className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
           style={
             isPlay
               ? { animationDuration: `${8 - speed}s` }
               : { animationDuration: `8s` }
+          }
+          ref={obstacle2Ref}
+        />
+        <img
+          src={obstacle4}
+          alt=""
+          className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
+          style={
+            isPlay
+              ? { animationDuration: `${11 - speed}s` }
+              : { animationDuration: `11s` }
           }
           ref={obstacle2Ref}
         />
