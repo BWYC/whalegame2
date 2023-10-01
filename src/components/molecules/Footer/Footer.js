@@ -3,14 +3,14 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="copyright">
-      Copyright © {new Date().getFullYear()}{" "}
+      GAME V1.2 Copyright © {new Date().getFullYear()}{" "}
       <a
         href="https://boredwhalesyachtclub.org/"
         target="_blank"
         rel="noreferrer"
         className="copyright-link"
       >
-        Bored Whales Yacht Club
+        BoredWhalesYachtClub
       </a>
     </div>
   );

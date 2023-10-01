@@ -17,6 +17,8 @@ import {
   useMetamask,
 } from "@thirdweb-dev/react";
 import CurrentGear from "../../../components/CurrentGear";
+import truncateEthAddress from "truncate-eth-address";
+import { Blockie } from "web3uikit";
 
 export const Score = () => {
   const address = useAddress();
@@ -48,17 +50,26 @@ export const Score = () => {
       dispatch(setLastScore(score));
     }
   }, [dispatch, play, score, lastScore, die]);
+
   return (
     <>
       <div className="score-container">
         {play && <p className="score">Score: {score}</p>}
-        {!play && <p className="score">Score: {lastScore}</p>}
+        {!play && <p className="score"> Score: {lastScore}</p>}
       </div>
+
       {miningContract &&
       characterContract &&
       tokenContract &&
       pickaxeContract ? (
-        <div>
+        <div
+          style={{
+            margin: "1%",
+            color: "white",
+            display: "flex",
+            width: "100%",
+          }}
+        >
           <Rewards
             miningContract={miningContract}
             tokenContract={tokenContract}

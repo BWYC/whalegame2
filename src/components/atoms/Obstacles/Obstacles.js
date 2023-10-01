@@ -3,6 +3,7 @@ import obstacle1 from "../../../assets/img/gif/goombla.gif";
 import obstacle2 from "../../../assets/img/gif/koopa.gif";
 import obstacle3 from "../../../assets/img/gif/boat.gif";
 import obstacle4 from "../../../assets/img/gif/boat1.gif";
+import obstacle5 from "../../../assets/img/gif/boat2.gif";
 import { useRef, useEffect } from "react";
 import styles from "../../../styles/Gameplay.module.css";
 
@@ -106,6 +107,17 @@ const Obstacles = () => {
             isPlay
               ? { animationDuration: `${11 - speed}s` }
               : { animationDuration: `11s` }
+          }
+          ref={obstacle2Ref}
+        />
+        <img
+          src={obstacle5}
+          alt=""
+          className={isPlay ? "obstacle2 obstacle2-move" : "obstacle2"}
+          style={
+            isPlay
+              ? { animationDuration: `${12 - speed}s` }
+              : { animationDuration: `12s` }
           }
           ref={obstacle2Ref}
         />
