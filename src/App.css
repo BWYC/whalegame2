@@ -13,8 +13,8 @@
   background: linear-gradient(
     0deg,
     rgba(255, 134, 134, 1) 0%,
-    rgb(2, 248, 248) 0%,
-    rgb(2, 10, 116) 100%
+    rgb(255, 247, 132) 0%,
+    rgb(5, 15, 150) 100%
   );
   overflow: hidden;
   user-select: none;
