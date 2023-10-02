@@ -41,13 +41,6 @@ export const Score = () => {
   const die = useSelector((state) => state.engine.die);
   const dispatch = useDispatch();
 
-  var Highscore = {
-    address: address,
-    score: { lastScore },
-  };
-
-  data.push(Highscore);
-
   useEffect(() => {
     if (play && !die) {
       setTimeout(() => {
@@ -56,6 +49,11 @@ export const Score = () => {
     }
     if (score && !play) {
       dispatch(setLastScore(score));
+      var Highscore = {
+        address: address,
+        score: { score },
+      };
+      data.push(Highscore);
     }
   }, [dispatch, play, score, lastScore, die]);
 
