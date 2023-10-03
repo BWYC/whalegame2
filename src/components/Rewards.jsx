@@ -38,8 +38,8 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", color: "orange", margin: "1%", fontSize: "14px", padding: "2%", border: "solid"
-    , borderRadius: "16px", width: "330px", height: "auto", backdropFilter: "blur(10px)"
+      style={{display: "flex", flexDirection: "column", color: "orange", margin: "1%", fontSize: "14px", padding: "2%", border: "solid"
+    , borderRadius: "16px", width: "350px", height: "auto", backdropFilter: "blur(10px)"
      }}
     >
       <p>

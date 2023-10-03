@@ -41,8 +41,6 @@ export const Score = () => {
   const play = useSelector((state) => state.engine.play);
   const die = useSelector((state) => state.engine.die);
   const dispatch = useDispatch();
-  const [player, setAddress] = useState("");
-  const [Highscore, setScore] = useState([]);
 
   useEffect(() => {
     if (play && !die) {

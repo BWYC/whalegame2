@@ -17,22 +17,8 @@ import {
 } from "../../../const/contractAddresses";
 import MintContainer from "../../../components/MintContainer";
 import Members from "../../../components/members/mem";
-import { getInitialData, genNextData } from "../../members/data/";
 
 const LoadingScreen = () => {
-  const [data, setData] = useState(getInitialData());
-  const doSwitch = () => {
-    setData((d) => {
-      [d[0], d[1]] = [d[1], d[0]];
-      d[0].score += 1000;
-      d[1].score += 2000;
-      return [...d];
-    });
-  };
-  useEffect(() => {
-    // const timer = setInterval(() => setData(genNextData()), 1000);
-    // return () => clearInterval(timer);
-  }, []);
   const { contract: miningContract } = useContract(MINING_CONTRACT_ADDRESS);
   const { contract: characterContract } = useContract(
     CHARACTER_EDITION_ADDRESS,
@@ -133,7 +119,6 @@ const LoadingScreen = () => {
     return (
       <>
         <div className="loading-screen-container">
-          <Members data={data} />
           <img src={MarioCharacter} alt="" className="loading-mario" />
           {!isReady && (
             <h1 className="loading-title">LOADING THE OCEAN🌊...</h1>
