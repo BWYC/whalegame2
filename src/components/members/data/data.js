@@ -1,7 +1,3 @@
+import { useState } from "react";
 
-export var data = [
-  {
-    "address": "",
-    "score": 0
-  }
-]
+export let data = [];

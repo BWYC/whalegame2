@@ -20,6 +20,7 @@ import CurrentGear from "../../../components/CurrentGear";
 import truncateEthAddress from "truncate-eth-address";
 import { Blockie } from "web3uikit";
 import { data } from "../../../components/members/data/data";
+import { useState } from "react";
 
 export const Score = () => {
   const address = useAddress();
@@ -40,6 +41,8 @@ export const Score = () => {
   const play = useSelector((state) => state.engine.play);
   const die = useSelector((state) => state.engine.die);
   const dispatch = useDispatch();
+  const [player, setAddress] = useState("");
+  const [Highscore, setScore] = useState([]);
 
   useEffect(() => {
     if (play && !die) {
@@ -49,11 +52,6 @@ export const Score = () => {
     }
     if (score && !play) {
       dispatch(setLastScore(score));
-      var Highscore = {
-        address: address,
-        score: { score },
-      };
-      data.push(Highscore);
     }
   }, [dispatch, play, score, lastScore, die]);
 
